@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Job Application Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Apply for Your Dream Job</h2>
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'personal-info')">Personal Info</button>
+            <button class="tab-button" onclick="openTab(event, 'education')">Education</button>
+            <button class="tab-button" onclick="openTab(event, 'employment')">Employment History</button>
+            <button class="tab-button" onclick="openTab(event, 'skills')">Skills & Certifications</button>
+            <button class="tab-button" onclick="openTab(event, 'application')">Application Details</button>
+        </div>
+
+        <form id="job-application-form">
+            <div id="personal-info" class="tab-content active">
+                <div class="form-section">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" placeholder="Last Name" required>
+                </div>
+                <div class="form-section">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" placeholder="Phone Number" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+            </div>
+
+            <div id="education" class="tab-content">
+                <div class="form-section">
+                    <label for="education-level">Highest Level of Education</label>
+                    <select id="education-level" required>
+                        <option value="">Select your education level</option>
+                        <option value="High School">High School</option>
+                        <option value="Associate Degree">Associate Degree</option>
+                        <option value="Bachelor's Degree">Bachelor's Degree</option>
+                        <option value="Master's Degree">Master's Degree</option>
+                        <option value="Doctorate">Doctorate</option>
+                    </select>
+                    <label for="school-name">School/University Name</label>
+                    <input type="text" id="school-name" placeholder="School/University Name" required>
+                </div>
+            </div>
+
+            <div id="employment" class="tab-content">
+                <div class="form-section">
+                    <label for="job-title">Previous Job Title</label>
+                    <input type="text" id="job-title" placeholder="Previous Job Title" required>
+                    <label for="company-name">Company Name</label>
+                    <input type="text" id="company-name" placeholder="Company Name" required>
+                </div>
+            </div>
+
+            <div id="skills" class="tab-content">
+                <div class="form-section">
+                    <label for="skills">Skills</label>
+                    <input type="text" id="skills" placeholder="Skills (e.g., JavaScript, Photoshop)" required>
+                </div>
+            </div>
+
+            <div id="application" class="tab-content">
+                <div class="form-section">
+                    <label for="resume">Upload Resume</label>
+                    <input type="file" id="resume" required>
+                    <label for="cover-letter">Cover Letter</label>
+                    <textarea id="cover-letter" placeholder="Cover Letter" required></textarea>
+                </div>
+                <div class="form-section">
+                    <label for="start-date">Preferred Start Date</label>
+                    <input type="date" id="start-date" required>
+                    <label for="reference-name">Reference Name</label>
+                    <input type="text" id="reference-name" placeholder="Reference Name" required>
+                </div>
+                <div class="form-section">
+                    <label for="why-company">Why do you want to work for this company?</label>
+                    <textarea id="why-company" placeholder="Explain why you want to join us" required></textarea>
+                </div>
+                <div class="form-section checkbox-section">
+                    <input type="checkbox" id="agree-terms" required>
+                    <label for="agree-terms">I accept the terms and conditions and have read the privacy policy.</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </div>
+        </form>
+
+        <div class="form-section">
+            <button id="view-table" class="view-table-btn" onclick="displayApplications()">View Applications as Table</button>
+        </div>
+    </div>
+
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Submitted Applications</h2>
+            <div id="sliderContent" class="slider"></div>
+            <div class="navigation">
+                <button id="prevButton">Previous</button>
+                <button id="nextButton">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="q2.js"></script>
+</body>
+</html>
